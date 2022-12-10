@@ -1,9 +1,18 @@
 let output = document.querySelector('#output')
+let operator;
+let num1;
+let num2;
 const keys = document.querySelector('#keys');
 
 // Update the display of the calculator
 function updateDisplay(e) {
-    if (output.textContent == "0") {
+    if (e.target.innerText == "Clear") {
+        output.textContent = "0";
+        num1 = null;
+        num2 = null;
+        operator = null;
+    }
+    else if (output.textContent == "0") {
         output.textContent = e.target.innerText;
     }
     else {
@@ -21,7 +30,7 @@ function subtract(a, b) {
     return a - b;
 }
 
-// Mutiplies two variables
+// Multiplies two variables
 function multiply(a, b) {
     return a * b;
 }
@@ -51,4 +60,4 @@ function operate(operator, num1, num2) {
 }
 
 // Listen for button clicks to update the display
-keys.addEventListener('click', updateDisplay)
+keys.addEventListener('click', updateDisplay);

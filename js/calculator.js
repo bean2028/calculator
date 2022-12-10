@@ -7,10 +7,7 @@ const keys = document.querySelector('#keys');
 // Update the display of the calculator
 function updateDisplay(e) {
     if (e.target.innerText == "Clear") {
-        output.textContent = "0";
-        num1 = null;
-        num2 = null;
-        operator = null;
+       clear();
     }
     else if (output.textContent == "0") {
         output.textContent = e.target.innerText;
@@ -18,6 +15,14 @@ function updateDisplay(e) {
     else {
         output.textContent = output.textContent + e.target.innerText;
     }
+}
+
+// Clear display and variables
+function clear() {
+    output.textContent = "0";
+    num1 = null;
+    num2 = null;
+    operator = null;
 }
 
 // Adds two variables

@@ -6,14 +6,15 @@ const keys = document.querySelector('#keys');
 
 // Update the display of the calculator
 function updateDisplay(e) {
-    if (e.target.innerText == "Clear") {
+    input = e.target.innerText;
+    if (input == "Clear") {
        clear();
     }
     else if (output.textContent == "0") {
-        output.textContent = e.target.innerText;
+        output.textContent = input;
     }
     else {
-        output.textContent = output.textContent + e.target.innerText;
+        output.textContent = output.textContent + input;
     }
 }
 

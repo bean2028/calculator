@@ -26,15 +26,18 @@ function clear() {
     operator = null;
 }
 
+// Update output, num1, & num2 based on operator clicked
 function operatorClick (i) {
     if (num1 == null) {
         num1 = parseInt(output.textContent);
         output.textContent = "0";
+        operator = i;
     }
     else {
         num2 = parseInt(output.textContent);
         output.textContent = operate(i, num1, num2)
         num1 = parseInt(output.textContent);
+        operator = i;
     }
 }
 

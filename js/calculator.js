@@ -41,6 +41,14 @@ function operatorClick (i) {
     }
 }
 
+// Update output to show result of math operation
+function equalClick () {
+    num2 = parseInt(output.textContent);
+    output.textContent = operate(operator, num1, num2);
+    num1 = output.textContent;
+    num2 = null;
+}
+
 // Adds two variables
 function add(a, b) {
     return a + b;

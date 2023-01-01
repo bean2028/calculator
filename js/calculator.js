@@ -26,6 +26,18 @@ function clear() {
     operator = null;
 }
 
+function operatorClick (i) {
+    if (num1 == null) {
+        num1 = parseInt(output.textContent);
+        output.textContent = "0";
+    }
+    else {
+        num2 = parseInt(output.textContent);
+        output.textContent = operate(i, num1, num2)
+        num1 = parseInt(output.textContent);
+    }
+}
+
 // Adds two variables
 function add(a, b) {
     return a + b;

@@ -10,6 +10,12 @@ function updateDisplay(e) {
     if (input == "Clear") {
        clear();
     }
+    else if ((input == "+") || (input == "-") || (input == "/") || (input == "*") ) {
+        operatorClick(input);
+    }
+    else if (input == "=") {
+        equalClick();
+    }
     else if (output.textContent == "0") {
         output.textContent = input;
     }

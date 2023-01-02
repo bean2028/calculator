@@ -19,6 +19,11 @@ function updateDisplay(e) {
     else if (output.textContent == "0") {
         output.textContent = input;
     }
+    else if (num2 != null) {
+        num1 = parseInt(output.textContent);
+        num2 = null;
+        output.textContent = input;
+    }
     else {
         output.textContent = output.textContent + input;
     }
@@ -41,7 +46,7 @@ function operatorClick (i) {
     }
     else {
         num2 = parseInt(output.textContent);
-        output.textContent = operate(i, num1, num2)
+        output.textContent = operate(operator, num1, num2)
         num1 = parseInt(output.textContent);
         operator = i;
     }

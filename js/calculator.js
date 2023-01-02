@@ -15,6 +15,8 @@ function updateDisplay(e) {
     }
     else if (input == "=") {
         equalClick();
+        num1 = output.textContent;
+        operator = null;
     }
     else if (output.textContent == "0") {
         output.textContent = input;
@@ -39,7 +41,7 @@ function clear() {
 
 // Update output, num1, & num2 based on operator clicked
 function operatorClick (i) {
-    if (num1 == null) {
+    if ((num1 == null) || (operator == null)) {
         num1 = parseInt(output.textContent);
         output.textContent = "0";
         operator = i;
@@ -56,8 +58,6 @@ function operatorClick (i) {
 function equalClick () {
     num2 = parseInt(output.textContent);
     output.textContent = operate(operator, num1, num2);
-    num1 = output.textContent;
-    num2 = null;
 }
 
 // Adds two variables
